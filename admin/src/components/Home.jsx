@@ -1,7 +1,10 @@
 import React from "react";
 import { LayoutDashboard, NotebookPen, FileText } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div className="flex ">
     
@@ -19,7 +22,9 @@ function Home() {
             and users here.
           </p>
 
-          <div className="flex  items-center justify-center gap-12">
+          <div className="flex  items-center justify-center gap-12"
+          onClick={() => navigate("/topics")}
+          >
             <div className="rounded-xl py-3 px-4 m-5 hover:shadow-lg shadow-zinc-800  shadow-xl transition">
               <NotebookPen className="mx-auto text-zinc-300 mb-2" size={32} />
               <h3 className=" text-center font-semibold text-indigo-800">
@@ -28,7 +33,9 @@ function Home() {
               <p className="text-sm text-gray-600">Manage all topics</p>
             </div>
 
-            <div className=" rounded-xl py-3 px-4 m-5  show-lg hover:shadow-lg shadow-zinc-800 shadow-xl transition">
+            <div className=" rounded-xl py-3 px-4 m-5  show-lg hover:shadow-lg shadow-zinc-800 shadow-xl transition"
+            onClick={() => navigate("/question")}
+            >
               <FileText className="mx-auto text-zinc-300 mb-2" size={32} />
               <h3 className=" text-center font-semibold text-indigo-800">
                 Questions
