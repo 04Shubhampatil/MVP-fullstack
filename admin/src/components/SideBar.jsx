@@ -9,7 +9,7 @@ function SideBar() {
         <h2 className="text-3xl font-bold tracking-tigh my-3 py-3">
           <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
             Admin
-          </span>{" "}
+          </span>
           <span className="text-white ml-2">Panel</span>
         </h2>
         <ul className="flex flex-col gap-7 my-6 py-3">
