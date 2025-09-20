@@ -58,29 +58,54 @@ const getById = async (req, res) => {
     }
 }
 
-const deleteQuestions = async(req,res)=>
-{
+const getByTopic = async (req, res) => {
+
+    try {
+        const getdata = await Questions.find({ topic: req.params.topic })
+        if (!getdata) {
+            res.status(401).json({
+                message: "questions not found",
+                success: false,
+
+            })
+
+        }
+        res.status(200).json({
+            getdata,
+
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+
+    }
+
+}
+
+const deleteQuestions = async (req, res) => {
 
     try {
         const deletedata = await Questions.findByIdAndDelete(req.params.id)
-          res.status(200).json({
-            message:"data deleted successfully"
+        res.status(200).json({
+            message: "data deleted successfully"
 
         })
 
     } catch (error) {
-         res.status(500).json({
+        res.status(500).json({
 
             message: error.message
-        }) 
+        })
     }
 
 }
 
 
-export{
+export {
     createQuestions,
-        getQuestions,
-        getById,
-        deleteQuestions
+    getQuestions,
+    getById,
+    deleteQuestions,
+    getByTopic
 }
