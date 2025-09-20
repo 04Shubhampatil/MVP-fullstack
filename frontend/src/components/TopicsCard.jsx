@@ -1,8 +1,10 @@
 import React from "react";
 
-function TopicsCard({ topic, description, image }) {
+function TopicsCard({ topic, description, image,onClick }) {
   return (
-    <div className="bg-zinc-800 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition transform p-6 flex flex-col items-center text-center">
+    <div className="bg-zinc-800 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition transform p-6 flex flex-col items-center text-center" 
+      onClick={onClick}
+    >
       <img
         src={image}
         alt="topic"
