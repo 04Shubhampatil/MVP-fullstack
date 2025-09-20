@@ -1,9 +1,30 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Share/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Topics from "./components/Topics";
+import LogIn from "./auth/LogIn";
+import SignUp from "./auth/SignUp";
 
 function App() {
   return (
-    <div className='text-3xl text-center bg-zinc-400 text-white'>App</div>
-  )
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/topics" element={<Topics />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+       
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;

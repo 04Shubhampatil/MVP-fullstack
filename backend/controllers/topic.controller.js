@@ -22,9 +22,7 @@ const createTopics = async (req, res) => {
 
 const getTopics = async (req, res) => {
     try {
-        const topics = await Topics.find({}).populate({
-            path: "questionID",
-        })
+        const topics = await Topics.find({})
         res.status(200).json({
             topics, success: true
         })
