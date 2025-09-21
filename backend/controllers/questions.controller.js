@@ -4,7 +4,7 @@ const createQuestions = async (req, res) => {
     try {
 
         const questions = await Questions.create(req.body)
-        const saveQuestions = await questions.save()
+        const saveQuestions = await questions.save({})
         res.status(200).json({
             message: " Questions nsaved successfully",
             success: true,
