@@ -1,13 +1,16 @@
-
-
 @import "tailwindcss";
 @plugin "daisyui";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
 :root {
-  font-family: urbanist ;
+  font-family: urbanist;
   line-height: 1.5;
   font-weight: 400;
+  /* In your index.css or App.css */
 
+  body {
+    font-family: "Fira Code", monospace;
+  }
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -18,4 +21,3 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
